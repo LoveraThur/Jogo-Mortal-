@@ -69,7 +69,7 @@ os.system('clear')
 sort1 = random.randint(1,3)
 print(sort1)
 
-resposta1 = int(input('\033[31mTry to guess the number drawn:\n>>> '))
+resposta1 = int(input('\033[31mTry to guess the number drawn:\n >>> '))
 
 if resposta1 == sort1:
     print('\033[32mResposta Correta!\nContinua... \033[31m')
@@ -82,9 +82,9 @@ else:
 #FASE 2
 os.system('clear')
 sort2 = random.randint(1,10)
-print(f'resolva a Seguinte Fórmula:\n   {sort2} ^ nº questão 1 ')
+print(f'resolva a Seguinte Fórmula:\n   {sort2} ^ respostaFase1')
 operacao = sort2 ** sort1
-resposta2 = int(input('Resposta da Fórmula:\n>>> '))
+resposta2 = int(input('Resposta da Fórmula:\n >>> '))
 if resposta2 == operacao:
     print('\033[32mResposta Correta! \033[31m')
     time.sleep(3)
@@ -95,3 +95,15 @@ else:
 # ---------------------------------------------
 #FASE 3
 os.system('clear')
+print('Aguarde...')
+time.sleep(5)
+os.system('clear')
+print('Responda a seguinte Fórmula:\n   (respostaFase1 + respostaFase2)**respostaFase1 - respostaFase2')
+operacao2 = (resposta1 + resposta2) ** resposta1 - resposta2
+resposta3 = int(input('Resposta da Fórmula:\n >>>'))
+if resposta3 == operacao2:
+    print('\033[32mResposta Correta! \033[31m')
+    time.sleep(3)
+else:
+    os.system('clear')
+    print(deadMessage)   
