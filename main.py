@@ -1,9 +1,12 @@
+#Arthur Lovera - 1139243 e Arthur Silvani - 1139247
+#este programa foi utiliazado a lingua inglesa para que nós praticasse a lingua
+
 import os, time, random
 
 os.system('clear')
 #os.system('color1')
 
-boasVindas = '''
+welcome = '''\033[32m
 __        __   _                          _   ____                         
 \ \      / /__| | ___ ___  _ __ ___   ___| | |  _ \  ___                   
  \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | | | | |/ _ \                  
@@ -19,7 +22,8 @@ __        __   _                          _   ____
  \__, |\__,_|_| |_| |_|\___(_)                                             
  |___/                                                                    '''
 
-msgMorte = '''     .... NO! ...                  ... MNO! ...
+deadMessage = '''     
+    .... NO! ...                  ... MNO! ...
    ..... MNO!! ...................... MNNOO! ...
  ..... MMNO! ......................... MNNOO!! .
 .... MNOONNOO!   MMMMMMMMMMPPPOII!   MNNO!!!! .
@@ -42,34 +46,52 @@ msgMorte = '''     .... NO! ...                  ... MNO! ...
       ...... OO! ................. ON! .......
          ................................'''
 
-print(boasVindas) #Aprensetei boas vindas tela com variavel boasVindas
+print(welcome) #Aprensetei boas vindas tela com variavel boasVindas
 
 time.sleep(3) #Aguardar 3s para passar
 os.system('clear') #Limpa tela
 
 while True: #Adicionamos um while para pedir se o usuario que jogar mesmo.
-    jogar = str(input('Are you ready (S/N)?\n>>> ')).upper()
+    play = str(input('Are you ready (Y/N)?\n>>> ')).upper()
 
-    if jogar == 'S':
+    if play == 'Y':
         break
     #elif jogar == 'N':
         #os.system('shutdown -r now')
     else:
         pass
 
-#FALTA POR COR VERMELHA
+
 # ---------------------------------------------
 #FASE 1
 
 os.system('clear')
-sorteio = random.randint(1,3)
+sort1 = random.randint(1,3)
+print(sort1)
 
+resposta1 = int(input('\033[31mTry to guess the number drawn:\n>>> '))
 
-jogoAzar = int(input('Try to guess the number drawn:\n>>> '))
-
-if jogoAzar == sorteio:
-    print('continua')
+if resposta1 == sort1:
+    print('\033[32mResposta Correta!\nContinua... \033[31m')
+    time.sleep(3)
 else:
     os.system('clear')
-    print(msgMorte)
+    print(deadMessage)
     
+# ---------------------------------------------
+#FASE 2
+os.system('clear')
+sort2 = random.randint(1,10)
+print(f'resolva a Seguinte Fórmula:\n   {sort2} ^ nº questão 1 ')
+operacao = sort2 ** sort1
+resposta2 = int(input('Resposta da Fórmula:\n>>> '))
+if resposta2 == operacao:
+    print('\033[32mResposta Correta! \033[31m')
+    time.sleep(3)
+else:
+    os.system('clear')
+    print(deadMessage)
+
+# ---------------------------------------------
+#FASE 3
+os.system('clear')
