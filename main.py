@@ -129,15 +129,15 @@ while True:
     contador += 1 
     resposta4 = int(input(f'Qual foi o {contador}° número?\n>>> '))
     
-    if resposta4 == sort3:
+    if contador == 1 and resposta4 == sort3:
         pass
-    elif resposta4 == sort4:
+    if contador == 2 and resposta4 == sort4:
         pass
-    elif resposta4 == sort5:
+    if contador == 3 and resposta4 == sort5:
         pass
-    elif resposta4 == sort6:
+    if contador == 4 and resposta4 == sort6:
         pass
-    elif resposta4 == sort7:
+    if contador == 5 and resposta4 == sort7:
         print('VOcê acertou todos os números')
         break
     else:
