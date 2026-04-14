@@ -131,14 +131,14 @@ while True:
     
     if contador == 1 and resposta4 == sort3:
         pass
-    if contador == 2 and resposta4 == sort4:
+    elif contador == 2 and resposta4 == sort4:
         pass
-    if contador == 3 and resposta4 == sort5:
+    elif contador == 3 and resposta4 == sort5:
         pass
-    if contador == 4 and resposta4 == sort6:
+    elif contador == 4 and resposta4 == sort6:
         pass
-    if contador == 5 and resposta4 == sort7:
-        print('VOcê acertou todos os números')
+    elif contador == 5 and resposta4 == sort7:
+        print('Você acertou todos os números')
         break
     else:
         print(deadMessage)
