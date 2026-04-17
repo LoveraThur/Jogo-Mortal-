@@ -1,0 +1,2 @@
+print('\nUm programador encontra um nano computador que trabalha apenas\ncom bits. O computador tem exatamente 41.943.040 bits de memória.\nQuantos Megabytes isso representa?')
+resposta5 = int(input('\nResposta\n>>>'))
