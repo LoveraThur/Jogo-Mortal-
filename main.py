@@ -6,23 +6,23 @@ import os, time, random
 os.system('clear')
 #os.system('color1')
 
-welcome = '''\033[32m
-__        __   _                          _   ____                         
-\ \      / /__| | ___ ___  _ __ ___   ___| | |  _ \  ___                   
- \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | | | | |/ _ \                  
-  \ V  V /  __/ | (_| (_) | | | | | |  __/_| | |_| | (_) |                 
-   \_/\_/ \___|_|\___\___/|_| |_| |_|\___(_) |____/ \___/                  
- _   _  ___  _   _  __      ____ _ _ __ | |_   _ __ | | __ _ _   _    __ _ 
-| | | |/ _ \| | | | \ \ /\ / / _` | '_ \| __| | '_ \| |/ _` | | | |  / _` |
-| |_| | (_) | |_| |  \ V  V / (_| | | | | |_  | |_) | | (_| | |_| | | (_| |
- \__, |\___/ \__,_|   \_/\_/_\__,_|_| |_|\__| | .__/|_|\__,_|\__, |  \__,_|
- |___/  __ _ _ __ ___   __|__ \               |_|            |___/         
- / _` |/ _` | '_ ` _ \ / _ \/ /                                            
-| (_| | (_| | | | | | |  __/_|                                             
- \__, |\__,_|_| |_| |_|\___(_)                                             
- |___/                                                                    '''
+bemVindo = '''\033[32m
+ ____                  __     ___           _       _                   
+| __ )  ___ _ __ ___   \ \   / (_)_ __   __| | ___ | |                  
+|  _ \ / _ \ '_ ` _ \   \ \ / /| | '_ \ / _` |/ _ \| |                  
+| |_) |  __/ | | | | |   \ V / | | | | | (_| | (_) |_|                  
+|____/ \___|_| |_| |_|    \_/_ |_|_| |_|\__,_|\___/(_)                  
+| __ )  ___  _ __ __ _      | | ___   __ _  __ _ _ __   _   _ _ __ ___  
+|  _ \ / _ \| '__/ _` |  _  | |/ _ \ / _` |/ _` | '__| | | | | '_ ` _ \ 
+| |_) | (_) | | | (_| | | |_| | (_) | (_| | (_| | |    | |_| | | | | | |
+|____/ \___/|_|  \__,_| _\___/ \___/ \__, |\__,_|_|     \__,_|_| |_| |_|
+    | | ___   __ _  ___|__ \         |___/                              
+ _  | |/ _ \ / _` |/ _ \ / /                                            
+| |_| | (_) | (_| | (_) |_|                                             
+ \___/ \___/ \__, |\___/(_)                                             
+             |___/                                                                                                                         '''
 
-deadMessage = '''     
+mensagemMorte = '''     
     .... NO! ...                  ... MNO! ...
    ..... MNO!! ...................... MNNOO! ...
  ..... MMNO! ......................... MNNOO!! .
@@ -46,103 +46,138 @@ deadMessage = '''
       ...... OO! ................. ON! .......
          ................................'''
 
-print(welcome) #Aprensetei boas vindas tela com variavel boasVindas
+mensagemParabens = '''
+__     __         //\   ____        _                    _                  
+\ \   / /__   ___|/_\| / ___|  ___ | |__  _ __ _____   _(_)_   _____ _   _  
+ \ \ / / _ \ / __/ _ \ \___ \ / _ \| '_ \| '__/ _ \ \ / / \ \ / / _ \ | | | 
+  \ V / (_) | (_|  __/  ___) | (_) | |_) | | |  __/\ V /| |\ V /  __/ |_| | 
+   \_/ \___/ \___\___| |____/ \___/|_.__/|_|  \___| \_/ |_| \_/ \___|\__,_| 
+         _            _             ____                   __ _             
+  __ _  | |_ ___   __| | ___  ___  |  _ \  ___  ___  __ _ / _(_) ___  ___   
+ / _` | | __/ _ \ / _` |/ _ \/ __| | | | |/ _ \/ __|/ _` | |_| |/ _ \/ __|  
+| (_| | | || (_) | (_| | (_) \__ \ | |_| |  __/\__ \ (_| |  _| | (_) \__ \_ 
+ \__,_|  \__\___/ \__,_|\___/|___/ |____/ \___||___/\__,_|_| |_|\___/|___(_)
+ ____                 _       __           _                                
+|  _ \ __ _ _ __ __ _| |__   /_/ _ __  ___| |                               
+| |_) / _` | '__/ _` | '_ \ / _ \ '_ \/ __| |                               
+|  __/ (_| | | | (_| | |_) |  __/ | | \__ \_|                               
+|_|   \__,_|_|  \__,_|_.__/ \___|_| |_|___(_)                               
+
+'''
+
+print(bemVindo) #Aprensetei boas vindas tela com variavel boasVindas
 
 time.sleep(3) #Aguardar 3s para passar
-os.system('clear') #Limpa tela
-
-while True: #Adicionamos um while para pedir se o usuario que jogar mesmo.
-    play = str(input('Are you ready (Y/N)?\n>>> ')).upper()
-
-    if play == 'Y':
-        break
-    #elif jogar == 'N':
-        #os.system('shutdown -r now')
-    else:
-        pass
-
-
-# ---------------------------------------------
-#FASE 1
-
-os.system('clear')
-sort1 = random.randint(1,3)
-print(sort1)
-
-resposta1 = int(input('\033[31mTry to guess the number drawn:\n >>> '))
-
-if resposta1 == sort1:
-    print('\033[32mResposta Correta!\nContinua... \033[31m')
-    time.sleep(3)
-else:
-    os.system('clear')
-    print(deadMessage)
-    
-# ---------------------------------------------
-#FASE 2
-os.system('clear')
-sort2 = random.randint(1,10)
-print(f'resolva a Seguinte Fórmula:\n   {sort2} ^ respostaFase1')
-operacao = sort2 ** sort1
-resposta2 = int(input('Resposta da Fórmula:\n >>> '))
-if resposta2 == operacao:
-    print('\033[32mResposta Correta! \033[31m')
-    time.sleep(3)
-else:
-    os.system('clear')
-    print(deadMessage)
-
-# ---------------------------------------------
-#FASE 3
-os.system('clear')
-print('Aguarde...')
-time.sleep(5)
-os.system('clear')
-print('Responda a seguinte Fórmula:\n   (respostaFase1 + respostaFase2)**respostaFase1 - respostaFase2')
-operacao2 = (resposta1 + resposta2) ** resposta1 - resposta2
-print(operacao2)
-resposta3 = int(input('Resposta da Fórmula:\n >>>'))
-if resposta3 == operacao2:
-    print('\033[32mResposta Correta! \033[31m')
-    time.sleep(3)
-else:
-    os.system('clear')
-    print(deadMessage)
-
-# ---------------------------------------------
-#FASE 4
-
-os.system('clear')
-
-sort3 = random.randint(1,101)
-sort4 = random.randint(1,101)
-sort5 = random.randint(1,101)
-sort6 = random.randint(1,101)
-sort7 = random.randint(1,101)
-list = (sort3, sort4, sort5, sort6, sort7)
-
-time.sleep(2)
-os.system('clear')
-print(list)
-contador = 0
 while True:
-    contador += 1 
-    resposta4 = int(input(f'Qual foi o {contador}° número?\n>>> '))
-    
-    if contador == 1 and resposta4 == sort3:
-        pass
-    elif contador == 2 and resposta4 == sort4:
-        pass
-    elif contador == 3 and resposta4 == sort5:
-        pass
-    elif contador == 4 and resposta4 == sort6:
-        pass
-    elif contador == 5 and resposta4 == sort7:
-        print('Você acertou todos os números')
-        break
+    os.system('clear') #Limpa tela
+
+    while True: #Adicionamos um while para pedir se o usuario que jogar mesmo.
+        jogar = str(input('Você está Pronto (S/N)?\n>>> ')).upper()
+
+        if jogar == 'S':
+            break
+        #elif jogar == 'N':
+            #print('Então você não irá utilizar o PC...')
+            #time.sleep(3)
+            #os.system('shutdown -r now')
+
+    # ---------------------------------------------
+    #FASE 1
+
+    os.system('clear')
+    sort1 = random.randint(1,3)
+    print(sort1)
+
+    resposta1 = int(input('\033[31mTente adivinhar o número sorteado (1 à 3):\n >>> '))
+
+    if resposta1 == sort1:
+        print('\033[32mResposta Correta!\nContinua... \033[31m')
+        time.sleep(3)
     else:
-        print(deadMessage)
+        os.system('clear')
+        print(mensagemMorte)
+        break
+        
+    # ---------------------------------------------
+    #FASE 2
+    os.system('clear')
+    sort2 = random.randint(1,10)
+    print(f'resolva a Seguinte Fórmula:\n   respostaFase1 ^ {sort2}')
+    operacao = sort1 ** sort2
+    resposta2 = int(input('Resposta da Fórmula:\n >>> '))
+    if resposta2 == operacao:
+        print('\033[32mResposta Correta! \033[31m')
+        time.sleep(3)
+    else:
+        os.system('clear')
+        print(mensagemMorte)
         break
 
-# ---------------------------------------------
-#FASE 5
+    # ---------------------------------------------
+    #FASE 3
+    os.system('clear')
+    print('Aguarde...')
+    time.sleep(5)
+    os.system('clear')
+    print('Responda a seguinte Fórmula:\n   (respostaFase1 + respostaFase2)**respostaFase1 - respostaFase2')
+    operacao2 = (resposta1 + resposta2) ** resposta1 - resposta2
+    print(operacao2)
+    resposta3 = int(input('Resposta da Fórmula:\n >>> '))
+    if resposta3 == operacao2:
+        print('\033[32mResposta Correta! \033[31m')
+        time.sleep(3)
+    else:
+        os.system('clear')
+        print(mensagemMorte)
+        break
+
+    # ---------------------------------------------
+    #FASE 4
+
+    os.system('clear')
+
+    sort3 = random.randint(1,101)
+    sort4 = random.randint(1,101)
+    sort5 = random.randint(1,101)
+    sort6 = random.randint(1,101)
+    sort7 = random.randint(1,101)
+
+    time.sleep(2)
+    print(f'[{sort3}, {sort4}, {sort5}, {sort6}, {sort7}]')
+    contador = 0
+    while True:
+        contador += 1 
+        resposta4 = int(input(f'Qual foi o {contador}° número?\n>>> '))
+        
+        if contador == 1 and resposta4 == sort3:
+            pass
+        elif contador == 2 and resposta4 == sort4:
+            pass
+        elif contador == 3 and resposta4 == sort5:
+            pass
+        elif contador == 4 and resposta4 == sort6:
+            pass
+        elif contador == 5 and resposta4 == sort7:
+            print('\033[32mVocê acertou todos os números\033[31m')
+            break
+        else:
+            print(mensagemMorte)
+            quit()
+
+    # ---------------------------------------------
+    #FASE 5
+    time.sleep(2)
+    os.system('clear')
+    print('RESOLVA O ENIGMA A SEGUIR')
+    time.sleep(2)
+    print('\nUm programador encontra um nano computador que trabalha apenas\ncom bits. O computador tem exatamente 41.943.040 bits de memória.\nQuantos Megabytes isso representa?')
+    resposta5 = int(input('\nResposta\n>>> '))
+
+    if resposta5 == 5:
+        print('\033[32m'mensagemParabens)
+        break
+    else:
+        print('Recomeçando...')
+        time.sleep(2)
+
+print('FIM DE JOGO!')

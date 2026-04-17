@@ -10,7 +10,7 @@ list = (sort3, sort4, sort5, sort6, sort7)
 
 time.sleep(2)
 os.system('clear')
-print(list)
+print(f'[{sort3}, {sort4}, {sort5}, {sort6}, {sort7}]')
 contador = 0
 while True:
     contador += 1 
