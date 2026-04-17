@@ -174,7 +174,7 @@ while True:
     resposta5 = int(input('\nResposta\n>>> '))
 
     if resposta5 == 5:
-        print('\033[32m'mensagemParabens)
+        print(f'\033[32m{mensagemParabens}')
         break
     else:
         print('Recomeçando...')
