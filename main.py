@@ -21,7 +21,7 @@ bemVindo = '''\033[32m
  \___/ \___/ \__, |\___/(_)                                             
              |___/                                                                                                                         '''
 
-mensagemMorte = '''     
+mensagemMorte = r'''     
 
 -----=+=:....:.............:.:.::...:::....:.................::------==--
 -----+:....:.................:...::::::---:....................:.::.::---
@@ -112,6 +112,7 @@ while True:
         else: 
             print('Respostas permitidas: \033[1mS/N\033[0;32m\n')
             time.sleep(3)
+
     # ---------------------------------------------
     #FASE 1
 
@@ -131,6 +132,7 @@ while True:
         
     # ---------------------------------------------
     #FASE 2
+
     os.system('cls' if os.name == 'nt' else 'clear')
     sort2 = random.randint(1,10) # sorteia um número de 1 a 10
     print(f'resolva a Seguinte Fórmula:\n   respostaFase1 ^ {sort2}')
@@ -146,6 +148,7 @@ while True:
 
     # ---------------------------------------------
     #FASE 3
+
     os.system('cls' if os.name == 'nt' else 'clear')
     print('Aguarde...')
     time.sleep(5)
@@ -200,6 +203,7 @@ while True:
 
     # ---------------------------------------------
     #FASE 5
+    
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear')
     print('RESOLVA O ENIGMA A SEGUIR')
